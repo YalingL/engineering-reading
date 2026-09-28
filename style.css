@@ -175,6 +175,20 @@ h1 { margin: 0; font-size: clamp(44px, 7vw, 68px); }
   border-left: 1px solid var(--line);
 }
 
+.back-to-current {
+  display: inline-block;
+  margin: 0 0 28px;
+  color: var(--accent);
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.back-to-current:hover { text-decoration: underline; }
+.back-to-current[hidden] { display: none; }
+
 .archive-list { display: flex; flex-direction: column; }
 
 .archive-link {
