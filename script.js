@@ -26,14 +26,20 @@ async function loadArticles() {
     document.querySelector("#week-note").textContent = `${latest.articles.length} picks`;
     current.innerHTML = latest.articles.map(articleHTML).join("");
 
-    archive.innerHTML = older.length
-      ? older.map((week, index) => `
-          <a class="archive-link" href="?week=${index + 1}">
-            ${week.label}
-            <span class="archive-count">${week.articles.length} articles</span>
-          </a>
-        `).join("")
-      : '<span class="archive-link">No previous weeks yet</span>';
+    archive.innerHTML = `
+      <a class="archive-link archive-current" href="./">
+        This week
+        <span class="archive-count">${latest.label} · ${latest.articles.length} articles</span>
+      </a>
+      ${older.length
+        ? older.map((week, index) => `
+            <a class="archive-link" href="?week=${index + 1}">
+              ${week.label}
+              <span class="archive-count">${week.articles.length} articles</span>
+            </a>
+          `).join("")
+        : ""}
+    `;
 
     const params = new URLSearchParams(window.location.search);
     const weekIndex = Number(params.get("week"));
