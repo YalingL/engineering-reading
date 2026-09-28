@@ -26,28 +26,24 @@ async function loadArticles() {
     document.querySelector("#week-note").textContent = `${latest.articles.length} picks`;
     current.innerHTML = latest.articles.map(articleHTML).join("");
 
-    archive.innerHTML = `
-      <a class="archive-link archive-current" href="./">
-        This week
-        <span class="archive-count">${latest.label} · ${latest.articles.length} articles</span>
-      </a>
-      ${older.length
-        ? older.map((week) => `
-            <a class="archive-link" href="?week=${encodeURIComponent(week.id)}">
-              ${week.label}
-              <span class="archive-count">${week.articles.length} articles</span>
-            </a>
-          `).join("")
-        : ""}
-    `;
+    archive.innerHTML = older.length
+      ? older.map((week) => `
+          <a class="archive-link" href="?week=${encodeURIComponent(week.id)}">
+            ${week.label}
+            <span class="archive-count">${week.articles.length} articles</span>
+          </a>
+        `).join("")
+      : '<span class="archive-link">No previous weeks yet</span>';
 
     const params = new URLSearchParams(window.location.search);
     const weekId = params.get("week");
     const selected = weekId ? data.weeks.find((week) => week.id === weekId) : null;
     if (selected) {
+      document.querySelector("#week-eyebrow").textContent = "ARCHIVE";
       document.querySelector("#week-title").textContent = selected.label;
       document.querySelector("#week-note").textContent = `${selected.articles.length} picks`;
       current.innerHTML = selected.articles.map(articleHTML).join("");
+      archive.insertAdjacentHTML("afterbegin", '<a class="archive-back" href="./">← Back to this week</a>');
     }
   } catch (error) {
     current.innerHTML = '<p class="error">Articles could not be loaded.</p>';
