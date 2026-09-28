@@ -65,7 +65,7 @@ body {
 .page-shell {
   max-width: calc(var(--content) + var(--sidebar) + var(--gap));
   margin: 0 auto;
-  padding: 60px 24px 100px;
+  padding: 34px 24px 100px;
   display: grid;
   grid-template-columns: minmax(0, var(--content)) var(--sidebar);
   gap: var(--gap);
@@ -73,7 +73,7 @@ body {
 }
 
 .content-column { min-width: 0; }
-.intro { padding: 20px 0 90px; }
+.intro { padding: 8px 0 48px; }
 
 .eyebrow {
   margin: 0 0 14px;
@@ -90,18 +90,18 @@ h1, h2, h3 {
   letter-spacing: -.025em;
 }
 
-h1 { margin: 0; font-size: clamp(44px, 7vw, 68px); }
+h1 { margin: 0; font-size: clamp(32px, 4.5vw, 46px); }
 
 .lede {
   max-width: 620px;
-  margin: 28px 0 0;
+  margin: 18px 0 0;
   color: var(--muted);
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.65;
 }
 
 .publish-note {
-  margin: 18px 0 0;
+  margin: 12px 0 0;
   color: var(--faint);
   font-family: Arial, sans-serif;
   font-size: 12px;
@@ -146,7 +146,7 @@ h1 { margin: 0; font-size: clamp(44px, 7vw, 68px); }
   color: var(--muted);
 }
 
-.article h3 { margin: 13px 0 16px; font-size: 30px; }
+.article h3 { margin: 13px 0 16px; font-size: 33px; }
 .article h3 a { color: var(--text); text-decoration: none; }
 .article h3 a:hover { color: var(--accent); }
 .summary { margin: 0 0 24px; color: var(--text); }
@@ -240,7 +240,8 @@ footer {
 @media (max-width: 600px) {
   body { font-size: 17px; }
   .page-shell { padding-top: 36px; }
-  .intro { padding-bottom: 64px; }
+  .intro { padding-bottom: 42px; }
+  h1 { font-size: 34px; }
   .section-heading { display: block; }
   .week-note { margin-top: 8px; }
   .article h3 { font-size: 26px; }
