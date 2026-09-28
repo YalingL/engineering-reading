@@ -26,17 +26,25 @@ async function loadArticles() {
     document.querySelector("#week-note").textContent = `${latest.articles.length} picks`;
     current.innerHTML = latest.articles.map(articleHTML).join("");
 
-    archive.innerHTML = older.map(week => `
-      <details class="archive-week">
-        <summary>
-          <span class="archive-date">${week.label}</span>
-          <span class="archive-count">${week.articles.length} articles +</span>
-        </summary>
-        ${week.articles.map(articleHTML).join("")}
-      </details>
-    `).join("");
+    archive.innerHTML = older.length
+      ? older.map((week, index) => `
+          <a class="archive-link" href="?week=${index + 1}">
+            ${week.label}
+            <span class="archive-count">${week.articles.length} articles</span>
+          </a>
+        `).join("")
+      : '<span class="archive-link">No previous weeks yet</span>';
+
+    const params = new URLSearchParams(window.location.search);
+    const weekIndex = Number(params.get("week"));
+    if (weekIndex > 0 && data.weeks[weekIndex]) {
+      const selected = data.weeks[weekIndex];
+      document.querySelector("#week-title").textContent = selected.label;
+      document.querySelector("#week-note").textContent = `${selected.articles.length} picks`;
+      current.innerHTML = selected.articles.map(articleHTML).join("");
+    }
   } catch (error) {
-    current.innerHTML = `<p class="error">Articles could not be loaded. If you opened index.html directly from your computer, run it through a local server or publish it with GitHub Pages.</p>`;
+    current.innerHTML = '<p class="error">Articles could not be loaded.</p>';
   }
 }
 
