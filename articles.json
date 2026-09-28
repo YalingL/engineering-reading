@@ -31,7 +31,8 @@
           "summary": "Meta describes an internal expert agent built around a structured knowledge layer, explicit reasoning procedures called recipes, automated evaluations, and a feedback loop that turns expert corrections into regression-tested updates without retraining the model.",
           "whyRead": "The architectural lesson is unusually transferable: separate what an agent knows from how it reasons. That makes failures attributable, changes reviewable, and improvements testable. It is a useful blueprint for thinking about reliable agents as software systems built around an LLM rather than treating the model itself as the whole product."
         }
-      ]
+      ],
+      "id": "2026-09-27"
     },
     {
       "label": "September 20, 2026",
@@ -47,7 +48,8 @@
           "summary": "Previous weeks remain available in a quiet archive so useful articles do not disappear after seven days.",
           "whyRead": "Over time, the archive becomes a personal engineering reading library."
         }
-      ]
+      ],
+      "id": "2026-09-20"
     }
   ]
 }
