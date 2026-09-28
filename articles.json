@@ -1,0 +1,49 @@
+{
+  "weeks": [
+    {
+      "label": "September 27, 2026",
+      "articles": [
+        {
+          "company": "Example Engineering Blog",
+          "title": "A placeholder for this week's first engineering read",
+          "url": "#",
+          "readingTime": "12 min read",
+          "tags": [
+            "distributed-systems",
+            "infrastructure"
+          ],
+          "summary": "This is sample content showing how an article will look on the site. Later, this field will contain a concise summary of the engineering problem, approach, and key lessons.",
+          "whyRead": "Use this space to explain what engineering intuition the article can build—not merely what the article says."
+        },
+        {
+          "company": "Example AI Lab",
+          "title": "A placeholder for this week's AI engineering read",
+          "url": "#",
+          "readingTime": "9 min read",
+          "tags": [
+            "ai",
+            "inference"
+          ],
+          "summary": "The second weekly pick can focus on AI systems, model serving, inference, evaluation, agents, or other practical engineering work around modern AI.",
+          "whyRead": "The goal is to connect AI topics to concrete engineering decisions, tradeoffs, failures, and lessons."
+        }
+      ]
+    },
+    {
+      "label": "September 20, 2026",
+      "articles": [
+        {
+          "company": "Archive Example",
+          "title": "Older recommendations will live here",
+          "url": "#",
+          "readingTime": "10 min read",
+          "tags": [
+            "systems"
+          ],
+          "summary": "Previous weeks remain available in a quiet archive so useful articles do not disappear after seven days.",
+          "whyRead": "Over time, the archive becomes a personal engineering reading library."
+        }
+      ]
+    }
+  ]
+}
