@@ -33,6 +33,40 @@
         }
       ],
       "id": "2026-09-27"
+    },
+    {
+      "id": "2026-09-20",
+      "label": "September 20, 2026",
+      "articles": [
+        {
+          "company": "Anthropic Engineering",
+          "title": "Scaling Managed Agents: Decoupling the brain from the hands",
+          "url": "https://www.anthropic.com/engineering/managed-agents",
+          "readingTime": "10 min read",
+          "tags": [
+            "ai-agents",
+            "agent-infrastructure",
+            "architecture",
+            "reliability"
+          ],
+          "summary": "Anthropic explains the architecture behind Managed Agents for long-horizon work: separating the model and harness (the brain), execution environments and tools (the hands), and a durable session log. These interfaces let harnesses and sandboxes fail, scale, and evolve independently as model capabilities change.",
+          "whyRead": "A strong AI-systems lesson in designing abstractions around something that changes unusually fast. Instead of baking today's model limitations into infrastructure, Anthropic makes volatile components replaceable behind stable interfaces. It is a useful example of applying classic distributed-systems ideas—stateless workers, durable logs, failure isolation, and late resource provisioning—to agent infrastructure."
+        },
+        {
+          "company": "Cloudflare",
+          "title": "Smaller, faster, safer: running Kimi and GLM at scale",
+          "url": "https://blog.cloudflare.com/smaller-faster-safer-models/",
+          "readingTime": "6 min read",
+          "tags": [
+            "ai-infrastructure",
+            "inference",
+            "gpu",
+            "performance"
+          ],
+          "summary": "Cloudflare describes how Workers AI serves large long-context models under GPU-memory constraints using FP8 KV-cache quantization, INT4 weight compression, disaggregated prefill and decode, and integrity checks for shared cache state. The post connects memory layout directly to concurrency, latency, throughput, cost, and reliability.",
+          "whyRead": "This is the kind of production AI infrastructure article worth learning from: an optimization is not simply 'faster' or 'smaller.' Prefill and decode have different bottlenecks, so the best representation differs by phase, and packing more work onto shared hardware creates new correctness risks. The broader intuition is to optimize around the actual bottleneck while accounting for the failure modes the optimization itself introduces."
+        }
+      ]
     }
   ]
 }
