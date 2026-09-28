@@ -13,42 +13,33 @@
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">◐</button>
   </header>
 
-  <main>
-    <section class="intro">
-      <p class="eyebrow">CURATED ENGINEERING READING</p>
-      <h1>A few good articles.<br>Every week.</h1>
-      <p class="lede">
-        Selected writing on AI, infrastructure, distributed systems, databases,
-        and the craft of building software.
-      </p>
-    </section>
+  <main class="page-shell">
+    <div class="content-column">
+      <section class="intro">
+        <p class="eyebrow">CURATED ENGINEERING READING</p>
+        <h1>A few good articles.<br>Every week.</h1>
+        <p class="lede">Selected writing on AI, infrastructure, distributed systems, databases, and the craft of building software.</p>
+      </section>
 
-    <section class="week">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">THIS WEEK</p>
-          <h2 id="week-title">Loading…</h2>
+      <section class="week">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">THIS WEEK</p>
+            <h2 id="week-title">Loading…</h2>
+          </div>
+          <p id="week-note" class="week-note"></p>
         </div>
-        <p id="week-note" class="week-note"></p>
-      </div>
-      <div id="current-articles" class="article-list"></div>
-    </section>
+        <div id="current-articles" class="article-list"></div>
+      </section>
+    </div>
 
-    <section class="archive">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">ARCHIVE</p>
-          <h2>Previous weeks</h2>
-        </div>
-      </div>
-      <div id="archive-list"></div>
-    </section>
+    <aside class="sidebar">
+      <p class="eyebrow">PREVIOUS WEEKS</p>
+      <nav id="archive-list" class="archive-list" aria-label="Previous weeks"></nav>
+    </aside>
   </main>
 
-  <footer>
-    <p>Built for slow reading and better engineering intuition.</p>
-  </footer>
-
+  <footer><p>Built for slow reading and better engineering intuition.</p></footer>
   <script src="script.js"></script>
 </body>
 </html>
