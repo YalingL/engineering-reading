@@ -32,8 +32,8 @@ async function loadArticles() {
         <span class="archive-count">${latest.label} · ${latest.articles.length} articles</span>
       </a>
       ${older.length
-        ? older.map((week, index) => `
-            <a class="archive-link" href="?week=${index + 1}">
+        ? older.map((week) => `
+            <a class="archive-link" href="?week=${encodeURIComponent(week.id)}">
               ${week.label}
               <span class="archive-count">${week.articles.length} articles</span>
             </a>
@@ -42,9 +42,9 @@ async function loadArticles() {
     `;
 
     const params = new URLSearchParams(window.location.search);
-    const weekIndex = Number(params.get("week"));
-    if (weekIndex > 0 && data.weeks[weekIndex]) {
-      const selected = data.weeks[weekIndex];
+    const weekId = params.get("week");
+    const selected = weekId ? data.weeks.find((week) => week.id === weekId) : null;
+    if (selected) {
       document.querySelector("#week-title").textContent = selected.label;
       document.querySelector("#week-note").textContent = `${selected.articles.length} picks`;
       current.innerHTML = selected.articles.map(articleHTML).join("");
