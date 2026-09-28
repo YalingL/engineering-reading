@@ -17,7 +17,7 @@ async function loadArticles() {
   const archive = document.querySelector("#archive-list");
 
   try {
-    const response = await fetch("articles.json");
+    const response = await fetch("/engineering-reading/articles.json");
     if (!response.ok) throw new Error("Could not load articles.");
     const data = await response.json();
 
