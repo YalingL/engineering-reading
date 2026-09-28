@@ -33,23 +33,6 @@
         }
       ],
       "id": "2026-09-27"
-    },
-    {
-      "label": "September 20, 2026",
-      "articles": [
-        {
-          "company": "Archive Example",
-          "title": "Older recommendations will live here",
-          "url": "#",
-          "readingTime": "10 min read",
-          "tags": [
-            "systems"
-          ],
-          "summary": "Previous weeks remain available in a quiet archive so useful articles do not disappear after seven days.",
-          "whyRead": "Over time, the archive becomes a personal engineering reading library."
-        }
-      ],
-      "id": "2026-09-20"
     }
   ]
 }
