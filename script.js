@@ -43,7 +43,7 @@ async function loadArticles() {
       document.querySelector("#week-title").textContent = selected.label;
       document.querySelector("#week-note").textContent = `${selected.articles.length} picks`;
       current.innerHTML = selected.articles.map(articleHTML).join("");
-      archive.insertAdjacentHTML("afterbegin", '<a class="archive-back" href="./">← Back to this week</a>');
+      document.querySelector("#back-to-current").hidden = false;
     }
   } catch (error) {
     current.innerHTML = '<p class="error">Articles could not be loaded.</p>';
