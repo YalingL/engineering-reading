@@ -50,14 +50,4 @@ async function loadArticles() {
   }
 }
 
-const toggle = document.querySelector("#theme-toggle");
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme) document.documentElement.dataset.theme = savedTheme;
-
-toggle.addEventListener("click", () => {
-  const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-  document.documentElement.dataset.theme = next;
-  localStorage.setItem("theme", next);
-});
-
 loadArticles();
