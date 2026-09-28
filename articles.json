@@ -4,28 +4,32 @@
       "label": "September 27, 2026",
       "articles": [
         {
-          "company": "Example Engineering Blog",
-          "title": "A placeholder for this week's first engineering read",
-          "url": "#",
-          "readingTime": "12 min read",
+          "company": "Uber Engineering",
+          "title": "Taming the ML Firehose: Scaling Feature Consistency",
+          "url": "https://www.uber.com/us/en/blog/taming-ml-firehose/",
+          "readingTime": "15 min read",
           "tags": [
-            "distributed-systems",
-            "infrastructure"
+            "machine-learning",
+            "feature-platform",
+            "flink",
+            "distributed-systems"
           ],
-          "summary": "This is sample content showing how an article will look on the site. Later, this field will contain a concise summary of the engineering problem, approach, and key lessons.",
-          "whyRead": "Use this space to explain what engineering intuition the article can build—not merely what the article says."
+          "summary": "Uber explains how it made online inference features the canonical source for future model training, eliminating training-serving skew while operating at recommendation traffic reaching 8 million QPS. The design spans selective feature logging, Kafka, Flink stream joins, state management, payload reduction, and multi-petabyte-scale cost constraints.",
+          "whyRead": "This is production ML engineering rather than model theory. The useful intuition is that ML correctness is often a data-systems problem: consistency, freshness, state, observability, and cost can matter as much as the model itself. It is also a concrete example of reducing an impossible-scale logging problem by asking which data actually has downstream value."
         },
         {
-          "company": "Example AI Lab",
-          "title": "A placeholder for this week's AI engineering read",
-          "url": "#",
-          "readingTime": "9 min read",
+          "company": "Meta Engineering",
+          "title": "An Organizational Second Brain: Building an AI That Learns From Experts",
+          "url": "https://engineering.fb.com/2026/09/02/ml-applications/organizational-second-brain-ai-learns-from-experts/",
+          "readingTime": "12 min read",
           "tags": [
-            "ai",
-            "inference"
+            "ai-agents",
+            "context-engineering",
+            "evals",
+            "knowledge-systems"
           ],
-          "summary": "The second weekly pick can focus on AI systems, model serving, inference, evaluation, agents, or other practical engineering work around modern AI.",
-          "whyRead": "The goal is to connect AI topics to concrete engineering decisions, tradeoffs, failures, and lessons."
+          "summary": "Meta describes an internal expert agent built around a structured knowledge layer, explicit reasoning procedures called recipes, automated evaluations, and a feedback loop that turns expert corrections into regression-tested updates without retraining the model.",
+          "whyRead": "The architectural lesson is unusually transferable: separate what an agent knows from how it reasons. That makes failures attributable, changes reviewable, and improvements testable. It is a useful blueprint for thinking about reliable agents as software systems built around an LLM rather than treating the model itself as the whole product."
         }
       ]
     },
