@@ -1,6 +1,40 @@
 {
   "weeks": [
     {
+      "id": "2026-10-04",
+      "label": "October 4, 2026",
+      "articles": [
+        {
+          "company": "Uber Engineering",
+          "title": "Designing MCP Gateway: Uber's MCP Management Platform",
+          "url": "https://www.uber.com/us/en/blog/designing-mcp-gateway/",
+          "readingTime": "12 min read",
+          "tags": [
+            "ai-agents",
+            "mcp",
+            "platform-engineering",
+            "distributed-systems"
+          ],
+          "summary": "Uber describes the platform it built after ad-hoc MCP integrations stopped scaling: a centralized MCP Registry as the control plane and a Proxy Gateway as the data plane, translating agent tool calls into existing HTTP, gRPC, and TChannel services. The system now hosts more than 800 MCP servers and 5,000 tools while giving agents a consistent interface for discovery, execution, ownership, and governance.",
+          "whyRead": "The reusable idea is not MCP itself but how to introduce a fast-moving interface without forcing the whole backend estate to migrate at once. Uber puts a stable gateway in front of existing services, separates control plane from data plane, and treats tool discovery and governance as platform problems. It is a strong example of using translation layers and centralized metadata to scale a new abstraction across a large organization."
+        },
+        {
+          "company": "Databricks",
+          "title": "How Databricks rolls out frontier models to 12,000 employees on Day 1",
+          "url": "https://www.databricks.com/blog/how-databricks-rolls-out-frontier-models-12000-employees-day-1",
+          "readingTime": "7 min read",
+          "tags": [
+            "ai-infrastructure",
+            "model-routing",
+            "observability",
+            "rollouts"
+          ],
+          "summary": "Databricks explains how it gives more than 12,000 employees immediate access to newly released frontier models without blindly making them defaults. Unity Gateway distributes model configuration, enforces per-user budgets, collects traces, and marks new models experimental while the team compares quality and cost over real workloads before promotion or removal.",
+          "whyRead": "This is a useful deployment pattern for any rapidly changing dependency: separate availability from promotion. Databricks can expose a new model on day one while bounding risk with budgets, observability, experimental labels, and a short evaluation window. The broader intuition is that fast adoption does not require skipping controls; good platform design can make experimentation cheap, reversible, and measurable."
+        }
+      ]
+    },
+    {
       "label": "September 27, 2026",
       "articles": [
         {
