@@ -23,7 +23,7 @@ async function loadArticles() {
 
     const [latest, ...older] = data.weeks;
     document.querySelector("#week-title").textContent = latest.label;
-    document.querySelector("#week-note").textContent = `${latest.articles.length} picks`;
+    document.querySelector("#week-note").textContent = "";
     current.innerHTML = latest.articles.map(articleHTML).join("");
 
     archive.innerHTML = older.length
@@ -41,7 +41,7 @@ async function loadArticles() {
     if (selected) {
       document.querySelector("#week-eyebrow").textContent = "ARCHIVE";
       document.querySelector("#week-title").textContent = selected.label;
-      document.querySelector("#week-note").textContent = `${selected.articles.length} picks`;
+      document.querySelector("#week-note").textContent = "";
       current.innerHTML = selected.articles.map(articleHTML).join("");
       document.querySelector("#back-to-current").hidden = false;
     }
