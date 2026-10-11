@@ -1,6 +1,40 @@
 {
   "weeks": [
     {
+      "id": "2026-10-11",
+      "label": "October 11, 2026",
+      "articles": [
+        {
+          "company": "Uber Engineering",
+          "title": "Scaling AI in Legal: Building Uber's Redlining Agent",
+          "url": "https://www.uber.com/us/en/blog/building-ubers-redlining-agent/",
+          "readingTime": "15 min read",
+          "tags": [
+            "ai-agents",
+            "rag",
+            "correctness",
+            "feedback-loops"
+          ],
+          "summary": "Uber describes how a contract-review agent evolved from unreliable playbook RAG into a hybrid system with clause-anchored policy rules, intent-indexed expert feedback, time-weighted examples, and a Word add-in. Deterministic rules override probabilistic recommendations, while lawyers retain final approval. Uber reports over 20% less average contract-review time.",
+          "whyRead": "Learn to build high-stakes agents around observed failure modes instead of a fashionable framework. Align retrieval keys with stable source documents; distinguish hard constraints from flexible judgments; and collect expert corrections as structured learning signals. The generalizable lesson is that reliable AI applications require deliberate boundaries between rules, model behavior, and human decisions."
+        },
+        {
+          "company": "USENIX OSDI 2026",
+          "title": "StriaTrace: Efficient Tracing and Diagnosis for Online LLM Inference (Operational Systems)",
+          "url": "https://www.usenix.org/conference/osdi26/presentation/wu-haonan",
+          "readingTime": "30 min read",
+          "tags": [
+            "ai-infrastructure",
+            "llm-inference",
+            "observability",
+            "performance"
+          ],
+          "summary": "StriaTrace addresses intermittent tail-latency SLO violations in production LLM inference. Instead of expensive exhaustive profiling, it instruments key synchronization boundaries and critical paths, filters for anomalous executions, and uses a workload-aware performance model plus cross-layer correlation to identify root causes. The authors report under 1% overhead and diagnosis of 19 root-cause categories.",
+          "whyRead": "Develop a reusable observability instinct: trace the events that gate progress, not every function; follow the critical path; and preserve high-fidelity evidence when a dynamic workload deviates from its expected behavior. It shows why averages, static thresholds, and offline replay often miss transient failures in latency-sensitive distributed services."
+        }
+      ]
+    },
+    {
       "id": "2026-10-04",
       "label": "October 4, 2026",
       "articles": [
