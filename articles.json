@@ -1,6 +1,40 @@
 {
   "weeks": [
     {
+      "id": "2026-10-18",
+      "label": "October 18, 2026",
+      "articles": [
+        {
+          "company": "Uber Engineering",
+          "title": "Translations at Scale: Memory Optimization Techniques That Kept Uber's P99 Under 1ms",
+          "url": "https://www.uber.com/us/en/blog/translations-at-scale/",
+          "readingTime": "12 min read",
+          "tags": [
+            "performance",
+            "memory-management",
+            "caching",
+            "go"
+          ],
+          "summary": "Uber profiles GC costs in a high-throughput Go translation library. It first replaces sync.Map with a value-based map and RWMutex, then introduces hybrid memory/disk caching to avoid reload-time OOMs. Sharded compact metadata, selective warmup, and a throttled LRU preserve over 99.9% cache hits while sharply reducing memory use.",
+          "whyRead": "Learn to distinguish GC object-count overhead from actual data size, and to revisit the bottleneck after every optimization. This is a practical lesson in choosing data structures for measured workload patterns, optimizing for access skew, and accounting for refresh-time memory peaks."
+        },
+        {
+          "company": "USENIX OSDI 2026",
+          "title": "BatchGen: An Architecture for Scalable and Efficient Batch Inference",
+          "url": "https://www.usenix.org/conference/osdi26/presentation/xu-tairan",
+          "readingTime": "35 min read",
+          "tags": [
+            "ai-infrastructure",
+            "llm-inference",
+            "scheduling",
+            "distributed-systems"
+          ],
+          "summary": "BatchGen rethinks offline LLM inference around sequence coroutines that can yield, combine, partition, and migrate across a shared GPU pool. This addresses underfilled MoE expert batches and long-tail generation that leave GPUs idle under static placement. Its authors report up to 2.3x lower batch completion time on 128 GPUs.",
+          "whyRead": "Learn to question whether an execution model still matches its workload: interactive latency and full-batch completion time demand different scheduling. The transferable design move is to find natural yield points and movable work units, trading local scheduling overhead for higher global utilization and better straggler handling."
+        }
+      ]
+    },
+    {
       "id": "2026-10-11",
       "label": "October 11, 2026",
       "articles": [
