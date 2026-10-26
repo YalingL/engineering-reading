@@ -1,6 +1,40 @@
 {
   "weeks": [
     {
+      "id": "2026-10-25",
+      "label": "October 25, 2026",
+      "articles": [
+        {
+          "company": "Anthropic Engineering",
+          "title": "Redesigning source control at Anthropic",
+          "url": "https://www.anthropic.com/research/redesigning-source-control",
+          "readingTime": "15 min read",
+          "tags": [
+            "ai-engineering",
+            "developer-infrastructure",
+            "distributed-systems",
+            "architecture"
+          ],
+          "summary": "As agent-written code pushed Anthropic from roughly 2,500 to over 30,000 daily merges and tens of millions of checkouts, Git mirrors and snapshots stopped scaling. The team migrated its monorepo to Scion in five months: an always-online, server-centric source-control system with immutable content-addressed objects, incremental changesets, lazy derived indexes, and sparse tiered caching. The reported infrastructure footprint is 200x smaller, while CI gains substantial capacity.",
+          "whyRead": "Learn to revisit an abstraction's original assumptions when the workload fundamentally changes. Git's offline-first full-repository model is valuable for humans but expensive for always-online agents. Scion demonstrates how to separate coordination from immutable data, scale reads with cache tiers, and keep work proportional to the change rather than repository size—while recognizing that this complexity is unjustified at ordinary scale."
+        },
+        {
+          "company": "OpenAI Engineering",
+          "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+          "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two/",
+          "readingTime": "17 min read",
+          "tags": [
+            "distributed-systems",
+            "storage",
+            "multi-tenancy",
+            "reliability"
+          ],
+          "summary": "OpenAI details how its Habitat storage platform evolved from shared Azure Cosmos DB containers to dedicated containers and back to shared multi-tenancy after addressing hot-key throttling, workload QoS, and partition capacity. The post also examines failover connection stampedes, global data placement, CDC-driven cache invalidation, and a reduction in global read p50 from about 120ms to 10ms.",
+          "whyRead": "Develop the intuition that isolation and pooling are workload-dependent trade-offs, not permanent architectural virtues. The return from single-tenant to multi-tenant storage shows why operational complexity and capacity-planning burden can outweigh blast-radius benefits. Study how real partition limits, failover behavior, and cross-region latency—not abstract database labels—should drive architecture and how layered controls make a previously failed design viable."
+        }
+      ]
+    },
+    {
       "id": "2026-10-18",
       "label": "October 18, 2026",
       "articles": [
